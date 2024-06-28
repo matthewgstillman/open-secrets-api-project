@@ -88,12 +88,12 @@ const Legislators = () => {
   return (
     <div>
       <h1>Legislators</h1>
-      <div>
+      <div className="stateForm">
         <h2>Choose your state</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="usState">
             <Form.Label>State</Form.Label>
-            <Form.Select name="usState">
+            <Form.Select name="usState" className="stateFormSelect">
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
               <option value="AZ">Arizona</option>

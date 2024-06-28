@@ -35,10 +35,27 @@
     transform: rotate(360deg);
   }
 }
-.testStylings {
-  border: 1px solid black;
+.stateForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+.stateForm .stateFormSelect {
+  align-self: center;
+  margin-bottom: 15px;
 }
 
+.legislatorList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
+}
 .legislatorList .legislator {
   list-style-type: none;
+  margin: 5px 0;
 }/*# sourceMappingURL=App.css.map */
