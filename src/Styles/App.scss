@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #31006F;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -37,47 +37,65 @@
   }
 }
 
-//Legislator Styles
-.stateForm {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-content: center;
-   align-items: center;
-   justify-items: center;
-   margin-bottom: 20px;
+// Legislator Styles
+.mainContainer {
+  background-color: #31006F;
+  color: white;
+  min-height: 100vh;
+  padding: 30px;
 
-   .stateFormSelect {
+  .stateForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 20px;
+
+    .stateFormLegislatorsHeader {
+      margin-bottom: 30px;
+    }
+
+    .stateFormLegislatorsSubheader {
+      margin-bottom: 15px;
+    }
+    
+    .stateFormSelect {
       align-self: center;
       margin-bottom: 15px;
-   }
-}
+    }
+  }
 
-.legislatorList {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   padding-left: 0;
+  .legislatorList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
 
-   .legislator {
+    .legislator {
       list-style-type: none;
       margin: 5px 0;
-   }
+    }
+  }
 }
 
-//Candidate Info Styles
+// Candidate Info Styles
 .mainCandidateContainer {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   padding: 30px;
+  background-color: #31006F;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 30px;
 
-   .candidateInfoHeader {
-      margin-bottom: 30px;
-   }
+  .candidateInfoHeader {
+    margin-bottom: 30px;
+  }
 
-   .buttonLink {
-      color: white;
-      text-decoration: none;
-   }
+  .buttonLink {
+    color: white;
+    text-decoration: none;
+  }
 }

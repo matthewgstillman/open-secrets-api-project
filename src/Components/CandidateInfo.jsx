@@ -44,7 +44,7 @@ const CandidateInfo = () => {
         <p>Loading...</p>
       ) : (
         <div className="candidateCard">
-          <Card style={{ width: '30rem' }}>
+          <Card style={{ width: '25rem' }}>
             <Card.Body>
               <Card.Title>{candidateInfo.cand_name} ({candidateInfo.party})</Card.Title>
               <Card.Title>{candidateInfo.state}</Card.Title>
