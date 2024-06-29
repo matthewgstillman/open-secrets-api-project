@@ -1,3 +1,6 @@
+$mobile: 370px;
+$tablet: 768px;
+
 .App {
   text-align: center;
 }
@@ -76,6 +79,44 @@
     .legislator {
       list-style-type: none;
       margin: 5px 0;
+
+      > a {
+        color: white;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    padding: 20px;
+    .stateForm {
+      margin-bottom: 10px;
+      .stateFormLegislatorsHeader {
+        margin-bottom: 20px;
+      }
+      .stateFormLegislatorsSubheader {
+        margin-bottom: 10px;
+      }
+    }
+    .legislatorList {
+      .legislator {
+        margin: 3px 0;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .stateForm {
+      .stateFormLegislatorsHeader {
+        margin-bottom: 15px;
+      }
+      .stateFormLegislatorsSubheader {
+        margin-bottom: 5px;
+      }
+    }
+    .legislatorList {
+      .legislator {
+        margin: 2px 0;
+      }
     }
   }
 }
@@ -97,5 +138,32 @@
   .buttonLink {
     color: white;
     text-decoration: none;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 20px;
+    .candidateInfoHeader {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .candidateInfoHeader {
+      margin-bottom: 15px;
+    }
+  }
+  
+  // Adjust .candidateCard width
+  .candidateCard {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; // Hide horizontal overflow
+  }
+
+  // Adjust .stateFormCard width
+  .stateFormCard {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; // Hide horizontal overflow
   }
 }

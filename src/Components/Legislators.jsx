@@ -122,7 +122,7 @@ const Legislators = () => {
           legislators.map((legislator, index) => (
             <li className="legislator" key={index}>
               <Link to={`/candidate/${legislator['@attributes'].cid}`}>
-                {legislator['@attributes'].firstlast} ({legislator['@attributes'].party}) {legislator['@attributes'].cid}
+                {legislator['@attributes'].firstlast} ({legislator['@attributes'].party})
               </Link>
             </li>
           ))

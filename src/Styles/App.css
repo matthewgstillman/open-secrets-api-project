@@ -13,7 +13,7 @@
   }
 }
 .App-header {
-  background-color: #282c34;
+  background-color: #31006F;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,7 +35,13 @@
     transform: rotate(360deg);
   }
 }
-.stateForm {
+.mainContainer {
+  background: linear-gradient(90deg, #2e036f, #6da2d9);
+  color: white;
+  min-height: 100vh;
+  padding: 30px;
+}
+.mainContainer .stateForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,18 +50,94 @@
   justify-items: center;
   margin-bottom: 20px;
 }
-.stateForm .stateFormSelect {
+.mainContainer .stateForm .stateFormLegislatorsHeader {
+  margin-bottom: 30px;
+}
+.mainContainer .stateForm .stateFormLegislatorsSubheader {
+  margin-bottom: 15px;
+}
+.mainContainer .stateForm .stateFormSelect {
   align-self: center;
   margin-bottom: 15px;
 }
-
-.legislatorList {
+.mainContainer .legislatorList {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-left: 0;
 }
-.legislatorList .legislator {
+.mainContainer .legislatorList .legislator {
   list-style-type: none;
   margin: 5px 0;
+}
+.mainContainer .legislatorList .legislator > a {
+  color: white;
+}
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 20px;
+  }
+  .mainContainer .stateForm {
+    margin-bottom: 10px;
+  }
+  .mainContainer .stateForm .stateFormLegislatorsHeader {
+    margin-bottom: 20px;
+  }
+  .mainContainer .stateForm .stateFormLegislatorsSubheader {
+    margin-bottom: 10px;
+  }
+  .mainContainer .legislatorList .legislator {
+    margin: 3px 0;
+  }
+}
+@media (max-width: 370px) {
+  .mainContainer .stateForm .stateFormLegislatorsHeader {
+    margin-bottom: 15px;
+  }
+  .mainContainer .stateForm .stateFormLegislatorsSubheader {
+    margin-bottom: 5px;
+  }
+  .mainContainer .legislatorList .legislator {
+    margin: 2px 0;
+  }
+}
+
+.mainCandidateContainer {
+  background: linear-gradient(90deg, #2e036f, #6da2d9);
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 30px;
+}
+.mainCandidateContainer .candidateInfoHeader {
+  margin-bottom: 30px;
+}
+.mainCandidateContainer .buttonLink {
+  color: white;
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .mainCandidateContainer {
+    padding: 20px;
+  }
+  .mainCandidateContainer .candidateInfoHeader {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 370px) {
+  .mainCandidateContainer .candidateInfoHeader {
+    margin-bottom: 15px;
+  }
+}
+.mainCandidateContainer .candidateCard {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.mainCandidateContainer .stateFormCard {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }/*# sourceMappingURL=App.css.map */
