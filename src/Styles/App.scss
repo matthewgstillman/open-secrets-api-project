@@ -39,7 +39,7 @@
 
 // Legislator Styles
 .mainContainer {
-  background-color: #31006F;
+  background: linear-gradient(90deg, #2e036f, #6da2d9);
   color: white;
   min-height: 100vh;
   padding: 30px;
@@ -82,7 +82,7 @@
 
 // Candidate Info Styles
 .mainCandidateContainer {
-  background-color: #31006F;
+  background: linear-gradient(90deg, #2e036f, #6da2d9);
   display: flex;
   color: white;
   flex-direction: column;
