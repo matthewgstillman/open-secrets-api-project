@@ -1,72 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Legislators = () => {
   const [legislators, setLegislators] = useState([]);
+  const [usState, setUsState] = useState("");
   const [error, setError] = useState(null);
   const apiKey = process.env.REACT_APP_API_KEY;
-  const [usState, setUsState] = useState("");
 
   const fetchLegislators = async (stateId) => {
     try {
-      const response = await fetch(`http://www.opensecrets.org/api/?method=getLegislators&id=${stateId}&apikey=${apiKey}`);
+      const response = await fetch(`http://www.opensecrets.org/api/?method=getLegislators&id=${stateId}&apikey=${apiKey}&output=json`);
       if (!response.ok) {
         throw new Error('Network response is having problems.');
       }
-
-      const contentType = response.headers.get('content-type');
-      let data;
-
-      if (contentType && contentType.includes('application/json')) {
-        data = await response.json();
-      } else if (contentType && contentType.includes('text/xml')) {
-        const text = await response.text();
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(text, "application/xml");
-        data = xmlToJson(xmlDoc);
-      } else {
-        const text = await response.text();
-        data = { response: { legislator: [{ '@attributes': { firstlast: text } }] } };
-      }
-
+      const data = await response.json();
+      console.log(data.response.legislator);
       setLegislators(data.response.legislator);
     } catch (error) {
       setError(error);
       console.error('There was a problem with the fetch operation:', error);
     }
-  };
-
-  const xmlToJson = (xml) => {
-    const obj = {};
-    if (xml.nodeType === 1) { 
-      if (xml.attributes.length > 0) {
-        obj["@attributes"] = {};
-        for (let j = 0; j < xml.attributes.length; j++) {
-          const attribute = xml.attributes.item(j);
-          obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
-        }
-      }
-    } else if (xml.nodeType === 3) {
-      obj = xml.nodeValue;
-    }
-
-    if (xml.hasChildNodes()) {
-      for (let i = 0; i < xml.childNodes.length; i++) {
-        const item = xml.childNodes.item(i);
-        const nodeName = item.nodeName;
-        if (typeof(obj[nodeName]) === "undefined") {
-          obj[nodeName] = xmlToJson(item);
-        } else {
-          if (typeof(obj[nodeName].push) === "undefined") {
-            const old = obj[nodeName];
-            obj[nodeName] = [];
-            obj[nodeName].push(old);
-          }
-          obj[nodeName].push(xmlToJson(item));
-        }
-      }
-    }
-    return obj;
   };
 
   useEffect(() => {
@@ -92,7 +46,6 @@ const Legislators = () => {
         <h2>Choose your state</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="usState">
-            <Form.Label>State</Form.Label>
             <Form.Select name="usState" className="stateFormSelect">
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -152,7 +105,13 @@ const Legislators = () => {
       </div>
       <ul className="legislatorList">
         {legislators.map((legislator, index) => (
-          <li className="legislator" key={index}>{legislator['@attributes'].firstlast}</li>
+          <li className="legislator" key={index}>
+            <Link to={`/candidate/${legislator['@attributes'].cid}`}>
+              {legislator['@attributes'].firstlast} ({legislator['@attributes'].party}) {legislator['@attributes'].cid}
+            </Link>
+            <br />
+            {legislator['@attributes'].birthdate}
+          </li>
         ))}
       </ul>
     </div>

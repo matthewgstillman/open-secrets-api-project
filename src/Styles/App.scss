@@ -37,6 +37,7 @@
   }
 }
 
+//Legislator Styles
 .stateForm {
    display: flex;
    flex-direction: column;
@@ -61,5 +62,22 @@
    .legislator {
       list-style-type: none;
       margin: 5px 0;
+   }
+}
+
+//Candidate Info Styles
+.mainCandidateContainer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 30px;
+
+   .candidateInfoHeader {
+      margin-bottom: 30px;
+   }
+
+   .buttonLink {
+      color: white;
+      text-decoration: none;
    }
 }
