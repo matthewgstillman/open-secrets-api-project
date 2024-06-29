@@ -153,17 +153,15 @@ $tablet: 768px;
     }
   }
   
-  // Adjust .candidateCard width
   .candidateCard {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden; // Hide horizontal overflow
+    overflow-x: hidden;
   }
 
-  // Adjust .stateFormCard width
   .stateFormCard {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden; // Hide horizontal overflow
+    overflow-x: hidden;
   }
 }
