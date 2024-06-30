@@ -13,7 +13,7 @@ const Legislators = () => {
   const fetchLegislators = async (stateId) => {
     setLoading(true);
     try {
-      const response = await fetch(`http://www.opensecrets.org/api/?method=getLegislators&id=${stateId}&apikey=${apiKey}&output=json`);
+      const response = await fetch(`https://www.opensecrets.org/api/?method=getLegislators&id=${stateId}&apikey=${apiKey}&output=json`);
       if (!response.ok) {
         throw new Error('Network response is having problems.');
       }

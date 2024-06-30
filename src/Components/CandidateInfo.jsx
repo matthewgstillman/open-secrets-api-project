@@ -13,7 +13,7 @@ const CandidateInfo = () => {
 
   const fetchCandidateInfo = async (candidateId) => {
     try {
-      const response = await fetch(`http://www.opensecrets.org/api/?method=candSummary&cid=${candidateId}&cycle=2024&apikey=${apiKey}&output=json`);
+      const response = await fetch(`https://www.opensecrets.org/api/?method=candSummary&cid=${candidateId}&cycle=2024&apikey=${apiKey}&output=json`);
       if (!response.ok) {
         throw new Error('Network response is having problems.');
       }
