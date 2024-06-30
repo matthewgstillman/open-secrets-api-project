@@ -7,6 +7,7 @@ const CandidateInfo = () => {
   const { cid } = useParams();
   const [candidateInfo, setCandidateInfo] = useState({});
   const [candidateSector, setCandidateSector] = useState([]);
+  const [candidateContributor, setCandidateContributor] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const apiKey = process.env.REACT_APP_API_KEY;
@@ -44,6 +45,24 @@ const CandidateInfo = () => {
     }
   };
 
+  const fetchCandidateContributors = async (candidateId) => {
+    try {
+      const response = await fetch(`https://www.opensecrets.org/api/?method=candContrib&cid=${candidateId}&cycle=2024&apikey=${apiKey}&output=json`);
+      if (!response.ok) {
+        throw new Error('Network response is having problems.');
+      }
+      const data = await response.json();
+      if (data.response && data.response.contributors && Array.isArray(data.response.contributors.contributor)) {
+        console.log(data.response.contributors.contributor);
+        setCandidateContributor(data.response.contributors.contributor);
+      } else {
+        console.error('Unexpected data structure:', data);
+      }
+    } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
+    }
+  };
+
   function formatNumber(number) {
     let numberString = number.toString();
     let parts = numberString.split('.');
@@ -55,6 +74,7 @@ const CandidateInfo = () => {
     if (cid) {
       fetchCandidateInfo(cid);
       fetchCandidateSector(cid);
+      fetchCandidateContributors(cid);
     }
   }, [cid, apiKey]);
 
@@ -90,6 +110,15 @@ const CandidateInfo = () => {
                     <strong>{sector['@attributes'].sector_name}:</strong> ${formatNumber(sector['@attributes'].total)}
                   </div>
                 ))}
+              </Card.Text>
+                <Card.Title>Top Contributors</Card.Title>
+                {Array.isArray(candidateContributor) && candidateContributor.map((contributor, index) => (
+                  <div key={index}>
+                    <strong>{contributor['@attributes'].org_name}:</strong> ${formatNumber(contributor['@attributes'].total)}
+                  </div>
+                ))}
+              <Card.Text>
+
               </Card.Text>
 
               <Button variant="primary">
