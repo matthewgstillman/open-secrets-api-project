@@ -68,6 +68,16 @@ $tablet: 768px;
       align-self: center;
       margin-bottom: 15px;
     }
+
+    .stateFormCard {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
   }
 
   .legislatorList {
@@ -154,12 +164,8 @@ $tablet: 768px;
   }
   
   .candidateCard {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .stateFormCard {
+    display: flex;
+    justify-content: center;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;

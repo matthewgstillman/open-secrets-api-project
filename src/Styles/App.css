@@ -60,6 +60,15 @@
   align-self: center;
   margin-bottom: 15px;
 }
+.mainContainer .stateForm .stateFormCard {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 .mainContainer .legislatorList {
   display: flex;
   flex-direction: column;
@@ -132,11 +141,8 @@
   }
 }
 .mainCandidateContainer .candidateCard {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-.mainCandidateContainer .stateFormCard {
+  display: flex;
+  justify-content: center;
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
