@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 
 const Legislators = () => {
   const [legislators, setLegislators] = useState([]);
-  const [usState, setUsState] = useState("");
+  const [usState, setUsState] = useState(localStorage.getItem('usState') || "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const apiKey = process.env.REACT_APP_API_KEY;
@@ -17,10 +17,8 @@ const Legislators = () => {
       if (!response.ok) {
         throw new Error('Network response is having problems.');
       }
-      setLoading(true);
       const data = await response.json();
       setLegislators(data.response.legislator);
-      setLoading(false);
     } catch (error) {
       setError(error);
       console.error('There was a problem with the fetch operation:', error);
@@ -39,6 +37,7 @@ const Legislators = () => {
     event.preventDefault();
     const selectedState = event.target.elements.usState.value;
     setUsState(selectedState);
+    localStorage.setItem('usState', selectedState); // Save usState to localStorage
   };
 
   if (error) {
@@ -55,7 +54,8 @@ const Legislators = () => {
               <h2 className="stateFormLegislatorsSubheader">Choose your state</h2>
               <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="usState">
-                  <Form.Select name="usState" className="stateFormSelect">
+                  <Form.Select name="usState" className="stateFormSelect" defaultValue={usState}>
+                    <option value="">Select a state</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
