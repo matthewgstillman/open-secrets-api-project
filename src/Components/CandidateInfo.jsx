@@ -18,7 +18,6 @@ const CandidateInfo = () => {
         throw new Error('Network response is having problems.');
       }
       const data = await response.json();
-      console.log(data.response.summary['@attributes']);
       setCandidateInfo(data.response.summary['@attributes']);
     } catch (error) {
       setError(error);
@@ -30,7 +29,7 @@ const CandidateInfo = () => {
 
   const fetchCandidateSector = async (candidateId) => {
     try {
-      const response = await fetch(`http://www.opensecrets.org/api/?method=candSector&cid=${candidateId}&cycle=2024&apikey=${apiKey}&output=json`);
+      const response = await fetch(`https://www.opensecrets.org/api/?method=candSector&cid=${candidateId}&cycle=2024&apikey=${apiKey}&output=json`);
       if (!response.ok) {
         throw new Error('Network response is having problems.');
       }
@@ -40,7 +39,6 @@ const CandidateInfo = () => {
       } else {
         console.error('Unexpected data structure:', data);
       }
-      console.log(`Candidate Sector: ${JSON.stringify(data.response, null, 2)}`);
     } catch (error) {
       console.error('There was a problem with the fetch operation:', error);
     }

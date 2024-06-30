@@ -19,7 +19,6 @@ const Legislators = () => {
       }
       setLoading(true);
       const data = await response.json();
-      console.log(data.response.legislator);
       setLegislators(data.response.legislator);
       setLoading(false);
     } catch (error) {
