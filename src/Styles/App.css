@@ -117,6 +117,10 @@
   .mainContainer .stateFormCard .card {
     width: 21px;
   }
+  .mainContainer .stateFormCard .card-body {
+    align-self: center;
+    max-width: 80%;
+  }
 }
 
 .mainCandidateContainer {

@@ -81,6 +81,10 @@ $tablet: 768px;
       .card {
         width: 25px;
       }
+
+      .card-body {
+
+      }
     }
   }
 
@@ -144,6 +148,11 @@ $tablet: 768px;
     .stateFormCard {
       .card {
         width: 21px;
+      }
+
+      .card-body {
+        align-self: center;
+        max-width: 80%;
       }
     }
   }

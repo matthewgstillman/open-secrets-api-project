@@ -47,8 +47,8 @@ const Legislators = () => {
   return (
     <div className='mainContainer'>
       <div className="stateForm">
+        <h1 className="stateFormLegislatorsHeader">Legislators</h1>
         <div className="stateFormCard">
-          <h1 className="stateFormLegislatorsHeader">Legislators</h1>
           <Card style={{ width: '25rem' }}>
             <Card.Body>
               <h2 className="stateFormLegislatorsSubheader">Choose your state</h2>
