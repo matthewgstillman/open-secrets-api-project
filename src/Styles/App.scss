@@ -63,7 +63,7 @@ $tablet: 768px;
     .stateFormLegislatorsSubheader {
       margin-bottom: 15px;
     }
-    
+
     .stateFormSelect {
       align-self: center;
       margin-bottom: 15px;
@@ -77,6 +77,10 @@ $tablet: 768px;
       width: 100%;
       max-width: 100%;
       overflow-x: hidden;
+
+      .card {
+        width: 25px;
+      }
     }
   }
 
@@ -98,15 +102,19 @@ $tablet: 768px;
 
   @media (max-width: $tablet) {
     padding: 20px;
+
     .stateForm {
       margin-bottom: 10px;
+
       .stateFormLegislatorsHeader {
         margin-bottom: 20px;
       }
+
       .stateFormLegislatorsSubheader {
         margin-bottom: 10px;
       }
     }
+
     .legislatorList {
       .legislator {
         margin: 3px 0;
@@ -119,13 +127,23 @@ $tablet: 768px;
       .stateFormLegislatorsHeader {
         margin-bottom: 15px;
       }
+
       .stateFormLegislatorsSubheader {
         margin-bottom: 5px;
       }
     }
+
     .legislatorList {
       .legislator {
         margin: 2px 0;
+      }
+    }
+  }
+
+  @media (max-width: 410px) {
+    .stateFormCard {
+      .card {
+        width: 21px;
       }
     }
   }
@@ -152,6 +170,7 @@ $tablet: 768px;
 
   @media (max-width: $tablet) {
     padding: 20px;
+
     .candidateInfoHeader {
       margin-bottom: 20px;
     }
@@ -162,7 +181,7 @@ $tablet: 768px;
       margin-bottom: 15px;
     }
   }
-  
+
   .candidateCard {
     display: flex;
     justify-content: center;
