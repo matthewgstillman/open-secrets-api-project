@@ -37,7 +37,7 @@ const Legislators = () => {
     event.preventDefault();
     const selectedState = event.target.elements.usState.value;
     setUsState(selectedState);
-    localStorage.setItem('usState', selectedState); // Save usState to localStorage
+    localStorage.setItem('usState', selectedState);
   };
 
   if (error) {
