@@ -114,7 +114,9 @@ const Legislators = () => {
             </Card.Body>
           </Card>
         </div>
-        <Image className="flagImage" src={`https://flagpedia.net/data/us/w1160/${usState.toLowerCase()}.webp`} fluid />
+        {usState && (
+          <Image className="flagImage" src={`https://flagpedia.net/data/us/w1160/${usState.toLowerCase()}.webp`} fluid />
+        )}
       </div>
       <ul className="legislatorList">
         {loading ? (
