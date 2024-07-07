@@ -81,10 +81,23 @@ $tablet: 768px;
       .card {
         width: 25px;
       }
+    }
+  }
 
-      .card-body {
+  .flagImage {
+    margin-top: 30px;
+    max-width: 15%;
 
-      }
+    @media (max-width: 2400px) {
+      max-width: 20%;
+    }
+
+    @media (max-width: 1800px) {
+      max-width: 30%;
+    }
+
+    @media (max-width: 1000px) {
+      max-width: 50%;
     }
   }
 

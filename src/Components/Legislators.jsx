@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
 
 const Legislators = () => {
   const [legislators, setLegislators] = useState([]);
@@ -113,6 +114,7 @@ const Legislators = () => {
             </Card.Body>
           </Card>
         </div>
+        <Image className="flagImage" src={`https://flagpedia.net/data/us/w1160/${usState.toLowerCase()}.webp`} fluid />
       </div>
       <ul className="legislatorList">
         {loading ? (

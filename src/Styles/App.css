@@ -72,6 +72,25 @@
 .mainContainer .stateForm .stateFormCard .card {
   width: 25px;
 }
+.mainContainer .flagImage {
+  margin-top: 30px;
+  max-width: 15%;
+}
+@media (max-width: 2400px) {
+  .mainContainer .flagImage {
+    max-width: 20%;
+  }
+}
+@media (max-width: 1800px) {
+  .mainContainer .flagImage {
+    max-width: 30%;
+  }
+}
+@media (max-width: 1000px) {
+  .mainContainer .flagImage {
+    max-width: 50%;
+  }
+}
 .mainContainer .legislatorList {
   display: flex;
   flex-direction: column;
