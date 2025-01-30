@@ -177,4 +177,13 @@
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+}
+.mainCandidateContainer .candidateCard .chart {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.mainCandidateContainer .candidateCard .goBackButton {
+  margin-top: 20px;
 }/*# sourceMappingURL=App.css.map */

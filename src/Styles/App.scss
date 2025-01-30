@@ -1,5 +1,6 @@
 $mobile: 370px;
 $tablet: 768px;
+$light-blue: #71afe5;
 
 .App {
   text-align: center;
@@ -42,7 +43,7 @@ $tablet: 768px;
 
 // Legislator Styles
 .mainContainer {
-  background: #71afe5;
+  background: $light-blue;
   color: white;
   min-height: 100vh;
   padding: 30px;
@@ -210,5 +211,16 @@ $tablet: 768px;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+
+    .chart {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    .goBackButton {
+      margin-top: 20px;
+    }
   }
 }
